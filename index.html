@@ -94,8 +94,8 @@
       </li>
     </ul>
     <ul class="fr topR">
-      <li><a href="#" target="_blank">当前IP：220.188.65.89</a></li>
-      <li><a href="#">中国未知城市</a></li>
+      <li><a href="#" target="_blank">当前IP：<span id="ipaddress"></span></a></li>
+      <li><a href="#" id="ipcity"></a></li>
     </ul>
   </div>
 </section>
@@ -623,5 +623,14 @@
     </div>
   </section>
 </footer>
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+<script type="text/javascript">
+  console.log(returnCitySN["cip"] + ',' + returnCitySN["cname"]);
+  var oIpaddress = document.getElementById('ipaddress');
+  var oIpcity = document.getElementById('ipcity');
+  oIpaddress.innerHTML = returnCitySN['cip'];
+  oIpcity.innerHTML = returnCitySN['cname'];
+
+</script>
 </body>
 </html>
